@@ -13,7 +13,7 @@ They need access to this private repo.
 **Claude Code**
 
 ```
-/plugin marketplace add inst-design/synth-data-plugin
+/plugin marketplace add StenSky/synth-data-plugin
 /plugin install synth-data@synth-data-plugin
 ```
 
