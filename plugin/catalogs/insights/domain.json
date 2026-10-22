@@ -1,0 +1,34 @@
+{
+  "id": "insights",
+  "title": "Instructure Insights",
+  "ready": true,
+  "whenToPick": [
+    "Intelligent Insights",
+    "Instructure Insights",
+    "Admin Analytics",
+    "Accessibility Analytics",
+    "Accessibility Insights",
+    "Course Readiness",
+    "Students in Need of Attention",
+    "SINOA",
+    "RSI",
+    "Intelligent Insights compliance reporting"
+  ],
+  "doNotPickWhen": [
+    "The screen is Canvas LMS itself (assignments, gradebook, speedgrader) with no Insights module named",
+    "The screen is Parchment, Mastery, or another domain that has its own pack"
+  ],
+  "snapshot": {
+    "sourceRepo": "instructure/looker-canvas-admin-analytics-v2",
+    "captured": "2026-10-20",
+    "note": "Shape only. Fill must not fetch this repo or any live system."
+  },
+  "disclaimer": "Synthetic dataset. Not live student or institutional records.",
+  "removedDisclosureWarning": "Disclosure removed\nThis screen uses a synthetic dataset. Without the on-screen mark, anyone who views, presents, or screenshots it can easily take these records for real student or institutional records. That confusion is enough to trigger data-security scrutiny. Restore the disclosure before you share this prototype.",
+  "identityRules": {
+    "sisIdPrefix": "SYN-C-",
+    "userSisPrefix": "SYN-U-",
+    "emailDomain": "example.edu",
+    "neverUse": ["@northridge.edu", "real school domains", "unguarded BIO-101 style IDs that could be a real SIS"]
+  }
+}

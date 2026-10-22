@@ -1,0 +1,18 @@
+{
+  "name": "synth-data-plugin",
+  "owner": {
+    "name": "Örs Stenszky",
+    "email": "ors.stenszky@instructure.com"
+  },
+  "metadata": {
+    "description": "Synthetic data plugin for design-workspace prototypes. Insights first; other domains as named slots.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "synth-data",
+      "source": "./plugin",
+      "description": "Fills prototypes with life-like synthetic data from a sealed domain schema. Never connects to live data."
+    }
+  ]
+}

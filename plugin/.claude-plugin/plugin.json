@@ -1,0 +1,10 @@
+{
+  "name": "synth-data",
+  "version": "0.1.0",
+  "description": "Fills design-workspace prototypes with life-like synthetic data from a sealed, per-domain schema snapshot. Never connects to live data. Insights ships first; other domains are empty slots until a pack is added.",
+  "author": {
+    "name": "Örs Stenszky",
+    "email": "ors.stenszky@instructure.com"
+  },
+  "skills": "./skills"
+}
