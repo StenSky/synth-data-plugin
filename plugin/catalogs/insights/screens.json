@@ -1,0 +1,98 @@
+{
+  "screens": [
+    {
+      "id": "accessibility-analytics",
+      "title": "Accessibility Analytics",
+      "whenToPick": [
+        "Accessibility Analytics",
+        "Accessibility Insights",
+        "account-level accessibility",
+        "course accessibility checker",
+        "a11y dashboard"
+      ],
+      "heroes": [
+        {
+          "label": "Accessibility Score",
+          "field": "accessibility_score",
+          "formula": "100 - (courses_at_risk / total_courses) * 100",
+          "format": "percent_1"
+        },
+        {
+          "label": "Courses At Risk",
+          "field": "courses_at_risk",
+          "definition": "Distinct courses with at least one open Critical or High issue"
+        },
+        {
+          "label": "Critical and High Severity Issues",
+          "field": "critical_and_high_issues"
+        },
+        {
+          "label": "Scan Coverage",
+          "field": "scan_coverage",
+          "formula": "courses_with_scan / total_courses",
+          "format": "percent_1"
+        }
+      ],
+      "table": {
+        "caption": "Scanned courses",
+        "sort": "critical_and_high_issues desc",
+        "columns": [
+          { "label": "Course", "fields": ["courses.name", "courses.sis_id"] },
+          { "label": "Account / Sub-Account", "field": "accounts.name" },
+          { "label": "Instructor(s)", "field": "courses.teacher_names" },
+          { "label": "Open Issues", "field": "open_issues" },
+          { "label": "Critical & High", "field": "critical_and_high_issues" },
+          { "label": "Last Scanned", "field": "last_scanned_date" },
+          { "label": "Status", "field": "courses.status" }
+        ]
+      },
+      "heroesMustMatchPortfolio": true
+    },
+    {
+      "id": "course-readiness-overview",
+      "title": "Course Readiness overview",
+      "whenToPick": [
+        "Course Readiness",
+        "CR dashboard",
+        "top-level overview dashboard",
+        "criteria sets",
+        "courses not ready"
+      ],
+      "heroes": [
+        {
+          "label": "Readiness Score",
+          "field": "course_readiness_score",
+          "definition": "Average of per-course readiness scores in the account",
+          "format": "percent_1"
+        },
+        {
+          "label": "Courses Not Ready",
+          "field": "count_not_ready_courses",
+          "definition": "Courses that fail at least one applicable criterion"
+        },
+        {
+          "label": "Courses Published",
+          "field": "courses_published_percent",
+          "formula": "published_courses / total_courses",
+          "format": "percent_1"
+        }
+      ],
+      "table": {
+        "caption": "Courses",
+        "sort": "course_readiness_score asc",
+        "columns": [
+          { "label": "Course", "fields": ["courses.name", "courses.sis_id"] },
+          { "label": "Instructor(s)", "field": "courses.teacher_names" },
+          { "label": "Format", "field": "courses.course_format" },
+          { "label": "Term", "field": "enrollment_terms.name" },
+          { "label": "Students", "field": "courses.studentcount" },
+          { "label": "Start date", "field": "courses.start_at_date" },
+          { "label": "Status", "field": "courses.status" },
+          { "label": "Readiness Score", "field": "course_readiness_score" },
+          { "label": "Failed criteria", "field": "list_not_passing_criteria" }
+        ]
+      },
+      "heroesMustMatchPortfolio": true
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "version": "0.1.0",
+  "rule": "A fill may use exactly one domain from this list, and only if ready is true. A domain that is missing or ready:false does not exist. Do not invent a domain.",
+  "domains": [
+    {
+      "id": "insights",
+      "title": "Instructure Insights",
+      "ready": true,
+      "path": "insights"
+    },
+    {
+      "id": "canvas",
+      "title": "Canvas",
+      "ready": false,
+      "path": "canvas"
+    },
+    {
+      "id": "parchment",
+      "title": "Parchment",
+      "ready": false,
+      "path": "parchment"
+    },
+    {
+      "id": "mastery",
+      "title": "Mastery",
+      "ready": false,
+      "path": "mastery"
+    }
+  ]
+}

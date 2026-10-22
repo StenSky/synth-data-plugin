@@ -1,0 +1,103 @@
+{
+  "entities": {
+    "courses": {
+      "fields": {
+        "name": { "type": "string" },
+        "sis_id": { "type": "string", "identity": "sisIdPrefix" },
+        "teacher_names": { "type": "string", "note": "One or more instructor names, comma-separated" },
+        "studentcount": { "type": "number" },
+        "start_at_date": { "type": "date", "format": "MM/DD/YYYY" },
+        "course_format": {
+          "type": "enum",
+          "values": ["online", "on_campus", "blended"]
+        },
+        "status": {
+          "type": "enum",
+          "values": [
+            "Published with Activity",
+            "Published without Activity",
+            "Unpublished",
+            "Deleted",
+            "Concluded without Activity"
+          ]
+        }
+      }
+    },
+    "accounts": {
+      "fields": {
+        "name": { "type": "string", "note": "Account or sub-account display name" }
+      }
+    },
+    "enrollment_terms": {
+      "fields": {
+        "name": { "type": "string", "example": "2026-2027 Fall" }
+      }
+    },
+    "teachers": {
+      "fields": {
+        "name": { "type": "string" }
+      }
+    }
+  },
+  "accessibility": {
+    "severity": {
+      "type": "enum",
+      "values": ["Critical", "High", "Medium", "Low", "No open issues"],
+      "order": ["Critical", "High", "Medium", "Low", "No open issues"]
+    },
+    "issue_category": {
+      "type": "enum",
+      "values": [
+        "Image alt text",
+        "Table",
+        "Link",
+        "Color contrast",
+        "Heading",
+        "Formatting"
+      ]
+    },
+    "issue_name": {
+      "type": "enum",
+      "values": [
+        "Missing alt text",
+        "Alt text is filename",
+        "Alt text is too long",
+        "Table header missing",
+        "Table header scope missing",
+        "Table caption missing",
+        "Broken link",
+        "Link purpose",
+        "Adjacent link",
+        "Text contrast",
+        "Heading 1 in document",
+        "Skipped heading level",
+        "Heading is too long",
+        "Misformed list"
+      ]
+    },
+    "content_type": {
+      "type": "enum",
+      "values": ["Pages", "Assignments", "Attachments", "Other"]
+    },
+    "measures": [
+      "open_issues",
+      "critical_and_high_issues",
+      "courses_at_risk",
+      "accessibility_score",
+      "scan_coverage",
+      "last_scanned_date"
+    ]
+  },
+  "course_readiness": {
+    "ready_label": { "type": "enum", "values": ["Ready", "Not Ready"] },
+    "criteria_sets": {
+      "note": "Use named sets. The only shipped canonical name is below. Account-owned sets may be invented as synthetic checklist names, never as customer fixture names.",
+      "canonical": ["Basics: Syllabus is visible to students"]
+    },
+    "measures": [
+      "course_readiness_score",
+      "count_not_ready_courses",
+      "list_not_passing_criteria"
+    ]
+  }
+}
